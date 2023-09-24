@@ -1,12 +1,12 @@
 import { Elysia } from 'elysia'
-import UserCollectionMemory from './external/memory/UserCollectionMemory'
 import UserRegister from './core/usuario/service/UserRegister'
 import UserRegisterController from './adapters/UserRegisterController'
+import UserCollectionPrismaPg from './external/prisma/UserCollectionPrismaPg'
 
 const app = new Elysia()
 
 // Routes Register
-const userCollection = new UserCollectionMemory()
+const userCollection = new UserCollectionPrismaPg()
 const userRegister = new UserRegister(userCollection)
 new UserRegisterController(app, userRegister)
 
