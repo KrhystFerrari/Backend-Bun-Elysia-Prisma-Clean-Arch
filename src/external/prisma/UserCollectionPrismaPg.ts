@@ -9,6 +9,10 @@ export default class UserCollectionPrismaPg implements UserCollection {
     this.prisma = new PrismaClient()
   }
 
+  consultAll(): Promise<User[]> {
+    return this.prisma.user.findMany()
+  }
+
   emailConsult(email: string): Promise<User | null> {
     return this.prisma.user.findUnique({
       where: {
@@ -16,6 +20,15 @@ export default class UserCollectionPrismaPg implements UserCollection {
       }
     })
   }
+
+  idConsult(id: number): Promise<User | null> {
+    return this.prisma.user.findUnique({
+      where: {
+        id
+      }
+    })
+  }
+
   create(user: User): Promise<User> {
     return this.prisma.user.create({ data: user })
   }
