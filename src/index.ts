@@ -5,7 +5,7 @@ import UserRegisterController from './adapters/UserRegisterController'
 
 const app = new Elysia()
 
-// Roustes Register
+// Routes Register
 const userCollection = new UserCollectionMemory()
 const userRegister = new UserRegister(userCollection)
 new UserRegisterController(app, userRegister)
