@@ -1,0 +1,17 @@
+{
+  "name": "bun-backend",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "eslint": "^8.50.0",
+    "prisma": "^5.3.1"
+  },
+  "module": "src/index.js"
+}
